@@ -1,0 +1,106 @@
+#need to import turtle and tkinter libraries
+from tkinter import *;
+import turtle;
+#starting main loop
+root = Tk();
+root.title("This is all you have teached me");
+
+#defining the functions for drawing(turtle) 
+def draw_circle(radius, color):
+    turtle.fillcolor(color);
+    turtle.begin_fill();
+    turtle.circle(radius);
+    turtle.end_fill();
+
+def draw_triangle(side_length, color):
+    turtle.fillcolor(color);
+    turtle.begin_fill();
+    for x in range(3):
+        turtle.forward(side_length);
+        turtle.left(120);
+    turtle.end_fill();
+
+
+def draw_square(side_length, color):
+    turtle.fillcolor(color);
+    turtle.begin_fill();
+    for x in range(4):
+        turtle.forward(side_length);
+        turtle.left(90);
+    turtle.end_fill();
+
+
+#defining functons for opening a new window
+def new_circle_window():
+    window = Toplevel(root, bg="black");
+    #label
+    label = Label(window, text="ENTER THE PARAMETERS:", font=8, fg="white", bg="black");
+    label.grid(row= 0, column = 0);
+
+    #entry for radius
+    entry_radius = Entry(window, borderwidth=10);
+    entry_radius.grid(row=1, column=0);
+    entry_radius.insert(0, "Enter the radius");
+
+    #entry for fillcolor
+    entry_fillcolor = Entry(window, borderwidth=10);
+    entry_fillcolor.grid(row=2, column=0);
+    entry_fillcolor.insert(0, "Enter the fillcolor");
+    #button for submition
+    button = Button(window, text= "SUBMIT", borderwidth=5, fg="white", bg="black", command=lambda:draw_circle(int(entry_radius.get()), str(entry_fillcolor.get())));
+    button.grid(row=3, column=0);
+
+
+def new_triangle_window():
+    window = Toplevel(root, bg="black");
+    #label
+    label = Label(window, text="ENTER THE PARAMETERS:", font=8, bg="black", fg="white");
+    label.grid(row=0, column=0);
+    #sidelength entry
+    entry_length = Entry(window, borderwidth=10);
+    entry_length.grid(row=1, column=0);
+    entry_length.insert(0, "Enter the side length");
+    #entry for fillcolor
+    entry_fillcolor = Entry(window, borderwidth=10);
+    entry_fillcolor.grid(row=2, column=0);
+    entry_fillcolor.insert(0, "Enter the fillcolor");
+    #button for submition
+    button = Button(window, text="SUBMIT", borderwidth=5, fg="white", bg="black", command = lambda:draw_triangle(int(entry_length.get()), str(entry_fillcolor.get() )));#ADD A COMMAND!!!
+    button.grid(row=3, column=0);
+
+
+def new_square_window():
+    window = Toplevel(root, bg="black");
+    #label
+    label = Label(window, text="ENTER THE PARAMETERS",font=8, bg="black", fg="white");
+    label.grid(row=0, column=0);
+    #entry for sidelength
+    entry_sidelength = Entry(window, borderwidth=10);
+    entry_sidelength.grid(row=1, column=0);
+    entry_sidelength.insert(0,"Enter the side length");
+    #entry for fillcolor
+    entry_fillcolor = Entry(window, borderwidth=10);
+    entry_fillcolor.grid(row=2, column=0);
+    entry_fillcolor.insert(0, "Enter the fillcolor");
+    #button
+    button = Button(window, text="SUBMIT", bg="black", fg="white", command=lambda:draw_square(int(entry_sidelength.get()), str(entry_fillcolor.get())));
+    button.grid(row=3, column=0);
+
+
+#Adding the label on te top
+label = Label(root, text = "WHAT DO YOU WANT TO DRAW?");
+label.grid(row=0, column=0);
+#declaring buttons
+button_circle = Button(root, text = "CIRCLE", padx=30, pady=20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_circle_window());
+button_triangle = Button(root, text = "TRIANGLE", padx=19, pady=20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_triangle_window());
+button_square = Button(root, text = "SQUARE", padx=30, pady= 20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_square_window());
+
+#gridding the buttons
+button_circle.grid(row=1, column=0);
+button_triangle.grid(row=2, column=0);
+button_square.grid(row=3, column= 0);
+
+
+
+
+root.mainloop();

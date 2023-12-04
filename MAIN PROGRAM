@@ -29,6 +29,22 @@ def draw_square(side_length, color):
         turtle.left(90);
     turtle.end_fill();
 
+#ADD A FUNCTION TO DRAW CUSTOM SHAPES
+def draw_shapes(num_sides, side_length, color):
+    turtle.fillcolor(color);
+    turtle.begin_fill();
+    for x in range(num_sides):
+        turtle.forward(side_length);
+        turtle.left(360/num_sides);
+
+    turtle.end_fill();
+
+#ADD A FUNCTION FOR LETTER DRAWING
+def draw_word(letter):        
+    letter = letter.upper();                   #FIX THE OVERLAP!!!!!!!!!!!maybe use if statements
+    dic_letter = {A: A(), B: B(), C: C()};   #ADD THE OTHER LETTERS!!!!!!!!!!
+    dic_letter[letter];
+
 
 #defining functons for opening a new window
 def new_circle_window():
@@ -65,7 +81,7 @@ def new_triangle_window():
     entry_fillcolor.grid(row=2, column=0);
     entry_fillcolor.insert(0, "Enter the fillcolor");
     #button for submition
-    button = Button(window, text="SUBMIT", borderwidth=5, fg="white", bg="black", command = lambda:draw_triangle(int(entry_length.get()), str(entry_fillcolor.get() )));#ADD A COMMAND!!!
+    button = Button(window, text="SUBMIT", borderwidth=5, fg="white", bg="black", command = lambda:draw_triangle(int(entry_length.get()), str(entry_fillcolor.get() )));
     button.grid(row=3, column=0);
 
 
@@ -83,9 +99,56 @@ def new_square_window():
     entry_fillcolor.grid(row=2, column=0);
     entry_fillcolor.insert(0, "Enter the fillcolor");
     #button
-    button = Button(window, text="SUBMIT", bg="black", fg="white", command=lambda:draw_square(int(entry_sidelength.get()), str(entry_fillcolor.get())));
+    button = Button(window, text="SUBMIT", bg="black", fg="white", borderwidth=5,command=lambda:draw_square(int(entry_sidelength.get()), str(entry_fillcolor.get())));
     button.grid(row=3, column=0);
 
+#WINDOW FOR COSTOM
+def new_custom_window():
+    window = Toplevel(root, bg="black");
+    #LABEL
+    label = Label(window, text="CHOOSE WHAT TO DRAW", font=8, bg="black", fg="white");
+    label.grid(row=0, column=0);
+    #BUTTON FOR SHAPES
+    button1 = Button(window, text="SHAPES", padx=30, pady=20, borderwidth=10, bg="black", fg="white", font=8, command=lambda:new_shapes_window()); 
+    button1.grid(row=1, column=0);
+    #BUTTON FOR WORDS
+    button2 = Button(window, text="LETTER", padx=35, pady=20, borderwidth=10, bg="black", fg="white", font=8, command=lambda:new_word_window());
+    button2.grid(row=2, column=0);
+
+#SECOND WINDOW FOR SHAPES 
+def new_shapes_window():
+    window = Toplevel(root, bg="black");
+    #LABEL
+    label = Label(window, text="ENTER THE PARAMETERS", bg="black", fg="white", font=8);
+    label.grid(row=0, column=0);
+    #ENTRY FOR NUMBER OF SIDES
+    entry_number_sides = Entry(window, borderwidth=8)
+    entry_number_sides.grid(row=1, column=0);
+    entry_number_sides.insert(0, "Enter number of sides");
+    #ENTRY FOR SIDE LENGTH
+    entry_side_length = Entry(window, borderwidth=8);
+    entry_side_length.grid(row=2, column=0);
+    entry_side_length.insert(0, "Enter side length");
+    #ENTRY FOR FILLCOLOR
+    entry_fillcolor = Entry(window, borderwidth=8);
+    entry_fillcolor.grid(row=3, column=0);
+    entry_fillcolor.insert(0, "Enter fillcolor");
+    #SUBMITION BUTTON
+    button = Button(window, text="SUBMIT", bg="black", fg="white", borderwidth=5, command=lambda:draw_shapes(int(entry_number_sides.get()), int(entry_side_length.get()), str(entry_fillcolor.get())));
+    button.grid(row=4, column=0);
+
+#NEW WINDOW FOR WORD DRAWING         
+def new_word_window():
+    window  = Toplevel(root, bg="black");
+    #LABEl
+    label = Label(window, text="ENTER THE LETTER", bg="black", fg="white", font=10);
+    label.grid(row=0, column=0);
+    #ENTRY FOR THE WORD
+    entry_word = Entry(window, borderwidth=8);
+    entry_word.grid(row=1, column=0);
+    #SUBMIT BUTTON
+    button = Button(window, text="SUBMIT", bg="black", fg="white", borderwidth=5, command=lambda:draw_word(entry_word.get()));
+    button.grid(row=2, column=0);
 
 #Adding the label on te top
 label = Label(root, text = "WHAT DO YOU WANT TO DRAW?");
@@ -94,12 +157,69 @@ label.grid(row=0, column=0);
 button_circle = Button(root, text = "CIRCLE", padx=30, pady=20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_circle_window());
 button_triangle = Button(root, text = "TRIANGLE", padx=19, pady=20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_triangle_window());
 button_square = Button(root, text = "SQUARE", padx=30, pady= 20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_square_window());
+button_custom = Button(root, text="CUSTOM", padx=30, pady=20, borderwidth=10, bg="black", fg="white", font=10, command=lambda:new_custom_window());
 
 #gridding the buttons
 button_circle.grid(row=1, column=0);
 button_triangle.grid(row=2, column=0);
 button_square.grid(row=3, column= 0);
+button_custom.grid(row=4, column=0);
 
+#FUNCTIONS FOR THE LETTERS             #IF I WANT IN THE FUTURE DRAW A WHOLE WORD I WILL CHANGE ALL THIS CODE BELOW!!!!!!!!!
+def A():                                # PLUS THE POSSITION AFTER THE LETTER IS NOT ORGANIZED!!!!
+    turtle.penup()
+    turtle.goto(-30,50) #centering in the screen
+    turtle.pendown()
+    turtle.pensize(10)
+    turtle.pencolor("black")
+
+    turtle.right(65)
+    turtle.forward(100)
+
+    turtle.setpos(-30,50)
+    turtle.right(50)
+    turtle.forward(100)
+
+    turtle.penup()
+    turtle.setpos(-50,-10)
+    turtle.right(65)
+    turtle.pendown()
+    turtle.backward(50)
+
+def B():
+    turtle.penup()
+    #draw straight line
+    turtle.goto(-30,50) #centering in the screen
+    turtle.pendown()
+    turtle.pensize(10)
+    turtle.pencolor("black")
+    turtle.right(90)
+    turtle.forward(200)
+
+    turtle.penup()
+    turtle.goto(-30,50) #centering in the screen
+    #draw first curve
+    turtle.pendown()
+    turtle.right(-90)
+    turtle.circle(-50,180)
+
+    turtle.penup()
+    turtle.goto(-30,-50) #centering in the screen
+    #draw second curve
+    turtle.pendown()
+    turtle.right(180)
+    turtle.circle(-50,180)
+#CHECK IF C WORKS
+def C():
+    pass;
+#CHECH IF D WORDS
+def D():
+    pass;
+#CHECH IF E WORDS
+def E():
+    pass;
+
+#ADD OTHER LETTERS      !!!!!!!!!!!!!!!!!!!
 
 
 

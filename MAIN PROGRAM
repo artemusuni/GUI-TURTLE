@@ -40,12 +40,27 @@ def draw_shapes(num_sides, side_length, color):
     turtle.end_fill();
 
 #ADD A FUNCTION FOR LETTER DRAWING
-def draw_word(letter):        
-    letter = letter.upper();                   #FIX THE OVERLAP!!!!!!!!!!!maybe use if statements
-    dic_letter = {A: A(), B: B(), C: C()};   #ADD THE OTHER LETTERS!!!!!!!!!!
-    dic_letter[letter];
+def draw_word(word):        
+    word = word.upper();                   #FIX THE OVERLAP!!!!!!!!!!!maybe use if statements
+    x = -300;
+    turtle.pensize(5);
+    for letter in word:
+        turtle.penup();
+        turtle.goto(x, 0);
+        if letter == "A": A();
+        if letter == "B": B();
+        if letter == "C":               #PROBEM IF C iS THE last letter
+            turtle.goto(x+30 , 0);
+            C();
+        
+        
 
 
+
+
+
+        if letter == "C":  x+=70;
+        else: x+=100;
 #defining functons for opening a new window
 def new_circle_window():
     window = Toplevel(root, bg="black");
@@ -165,53 +180,36 @@ button_triangle.grid(row=2, column=0);
 button_square.grid(row=3, column= 0);
 button_custom.grid(row=4, column=0);
 
-#FUNCTIONS FOR THE LETTERS             #IF I WANT IN THE FUTURE DRAW A WHOLE WORD I WILL CHANGE ALL THIS CODE BELOW!!!!!!!!!
-def A():                                # PLUS THE POSSITION AFTER THE LETTER IS NOT ORGANIZED!!!!
-    turtle.penup()
-    turtle.goto(-30,50) #centering in the screen
-    turtle.pendown()
-    turtle.pensize(10)
-    turtle.pencolor("black")
-
-    turtle.right(65)
-    turtle.forward(100)
-
-    turtle.setpos(-30,50)
-    turtle.right(50)
-    turtle.forward(100)
-
-    turtle.penup()
-    turtle.setpos(-50,-10)
-    turtle.right(65)
-    turtle.pendown()
-    turtle.backward(50)
+#LETTERS FUNCTION
+def A():
+    turtle.pendown();
+    turtle.left(65);
+    turtle.forward(100);
+    turtle.left(-130);
+    turtle.forward(100);
+    turtle.penup();
+    turtle.left(180);
+    turtle.forward(50);
+    turtle.left(65);
+    turtle.pendown();
+    turtle.forward(43);
+    turtle.penup();
+    turtle.right(180);                               
 
 def B():
-    turtle.penup()
-    #draw straight line
-    turtle.goto(-30,50) #centering in the screen
-    turtle.pendown()
-    turtle.pensize(10)
-    turtle.pencolor("black")
-    turtle.right(90)
-    turtle.forward(200)
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(90);
+    turtle.circle(-25, 180);
+    turtle.left(180);
+    turtle.circle(-25, 180);
+    turtle.left(180);
 
-    turtle.penup()
-    turtle.goto(-30,50) #centering in the screen
-    #draw first curve
-    turtle.pendown()
-    turtle.right(-90)
-    turtle.circle(-50,180)
-
-    turtle.penup()
-    turtle.goto(-30,-50) #centering in the screen
-    #draw second curve
-    turtle.pendown()
-    turtle.right(180)
-    turtle.circle(-50,180)
-#CHECK IF C WORKS
 def C():
-    pass;
+    turtle.pendown();
+    turtle.left(180);
+    turtle.circle(-45, 180);
 #CHECH IF D WORDS
 def D():
     pass;
@@ -219,7 +217,68 @@ def D():
 def E():
     pass;
 
-#ADD OTHER LETTERS      !!!!!!!!!!!!!!!!!!!
+def F():
+    pass;
+
+def G():
+    pass;
+
+def H():
+    pass;
+
+def I():
+    pass;
+
+def J():
+    pass;
+
+def K():
+    pass;
+
+def L():
+    pass;
+
+def M():
+    pass;
+
+def N():
+    pass;
+
+def O():
+    pass;
+
+def P():
+    pass;
+
+def Q():
+    pass;
+
+def R():
+    pass;
+
+def S():
+    pass;
+
+def T():
+    pass;
+
+def U():
+    pass;
+
+def V():
+    pass;
+
+def W():
+    pass;
+
+def X():
+    pass;
+
+def Y():
+    pass;
+
+def Z():
+    pass;
 
 
 

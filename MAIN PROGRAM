@@ -52,9 +52,9 @@ def draw_word(word):
         if letter == "C":               #PROBEM IF C iS THE last letter
             turtle.goto(x+30 , 0);
             C();
-        
-        
-
+        if letter == "D": D();
+        if letter == "E": E();        
+        if letter == "F": F();
 
 
 
@@ -212,13 +212,41 @@ def C():
     turtle.circle(-45, 180);
 #CHECH IF D WORDS
 def D():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(90);
+    turtle.circle(-50, 180);
+    turtle.right(180);
 #CHECH IF E WORDS
 def E():
-    pass;
+    turtle.pendown();
+    turtle.forward(60);
+    turtle.left(180);
+    turtle.forward(60);
+    turtle.right(90);
+    turtle.forward(100);
+    turtle.right(90);
+    turtle.forward(60);
+    turtle.right(180);
+    turtle.forward(60);
+    turtle.left(90);
+    turtle.forward(50);
+    turtle.left(90);
+    turtle.forward(60);
 
 def F():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(90);
+    turtle.forward(50);
+    turtle.left(180);
+    turtle.forward(50);
+    turtle.left(90);
+    turtle.forward(35);
+    turtle.left(90);
+    turtle.forward(50);
 
 def G():
     pass;
@@ -279,6 +307,10 @@ def Y():
 
 def Z():
     pass;
+
+
+
+root.mainloop();
 
 
 

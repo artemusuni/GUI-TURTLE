@@ -55,12 +55,25 @@ def draw_word(word):
         if letter == "D": D();
         if letter == "E": E();        
         if letter == "F": F();
-
+        if letter == "G":
+            turtle.goto(x+20, 0);
+            G();
+        if letter == "H": H();
 
 
 
         if letter == "C":  x+=70;
         else: x+=100;
+
+#ADDING FUNCTION FOR PIXELIZED LETTERS
+def pixel_word(pixels):
+    #ADD STARTING POSITIONS
+    
+    #ADDIGN THE MAIN 
+    for pixel in pixels:
+        pass;
+
+
 #defining functons for opening a new window
 def new_circle_window():
     window = Toplevel(root, bg="black");
@@ -162,8 +175,10 @@ def new_word_window():
     entry_word = Entry(window, borderwidth=8);
     entry_word.grid(row=1, column=0);
     #SUBMIT BUTTON
-    button = Button(window, text="SUBMIT", bg="black", fg="white", borderwidth=5, command=lambda:draw_word(entry_word.get()));
+    button = Button(window, text="NORMAL", bg="black", fg="white", borderwidth=5, command=lambda:draw_word(entry_word.get()));
     button.grid(row=2, column=0);
+    button_pixel = Button(window, text="PIXEL", bg="black", fg="white", borderwidth=5);#  ADD COMMAND!!!!!!!
+    button_pixel.grid(row=3, column=0);
 
 #Adding the label on te top
 label = Label(root, text = "WHAT DO YOU WANT TO DRAW?");
@@ -179,7 +194,7 @@ button_circle.grid(row=1, column=0);
 button_triangle.grid(row=2, column=0);
 button_square.grid(row=3, column= 0);
 button_custom.grid(row=4, column=0);
-
+#-----------------------------------------------------------------------
 #LETTERS FUNCTION
 def A():
     turtle.pendown();
@@ -249,10 +264,32 @@ def F():
     turtle.forward(50);
 
 def G():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(50);
+    turtle.left(90);
+    turtle.forward(30);
+    turtle.right(180);
+    turtle.forward(30);
+    turtle.right(90);
+    turtle.forward(50);
+    turtle.left(90);
+    turtle.circle(50, -180);
+    turtle.left(180);
 
 def H():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(180);
+    turtle.forward(50);
+    turtle.left(90);
+    turtle.forward(50);
+    turtle.left(90);
+    turtle.forward(50);
+    turtle.right(180);
+    turtle.forward(100);
+    turtle.left(90);
 
 def I():
     pass;
@@ -307,7 +344,6 @@ def Y():
 
 def Z():
     pass;
-
 
 
 root.mainloop();

@@ -67,11 +67,7 @@ def draw_word(word):
 
 #ADDING FUNCTION FOR PIXELIZED LETTERS
 def pixel_word(pixels):
-    #ADD STARTING POSITIONS
-    
-    #ADDIGN THE MAIN 
-    for pixel in pixels:
-        pass;
+    pass;
 
 
 #defining functons for opening a new window
@@ -140,7 +136,7 @@ def new_custom_window():
     button1 = Button(window, text="SHAPES", padx=30, pady=20, borderwidth=10, bg="black", fg="white", font=8, command=lambda:new_shapes_window()); 
     button1.grid(row=1, column=0);
     #BUTTON FOR WORDS
-    button2 = Button(window, text="LETTER", padx=35, pady=20, borderwidth=10, bg="black", fg="white", font=8, command=lambda:new_word_window());
+    button2 = Button(window, text="WORD", padx=35, pady=20, borderwidth=10, bg="black", fg="white", font=8, command=lambda:new_word_window());
     button2.grid(row=2, column=0);
 
 #SECOND WINDOW FOR SHAPES 
@@ -177,7 +173,7 @@ def new_word_window():
     #SUBMIT BUTTON
     button = Button(window, text="NORMAL", bg="black", fg="white", borderwidth=5, command=lambda:draw_word(entry_word.get()));
     button.grid(row=2, column=0);
-    button_pixel = Button(window, text="PIXEL", bg="black", fg="white", borderwidth=5);#  ADD COMMAND!!!!!!!
+    button_pixel = Button(window, text="PIXEL", bg="black", fg="white", borderwidth=5, command=lambda:pixel_word(entry_word.get()));
     button_pixel.grid(row=3, column=0);
 
 #Adding the label on te top
@@ -347,6 +343,7 @@ def Z():
 
 
 root.mainloop();
+
 
 
 

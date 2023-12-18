@@ -83,7 +83,116 @@ def draw_word(word):
 
 #ADDING FUNCTION FOR PIXELIZED LETTERS
 def pixel_word(pixels):
-    pass;
+
+    def draw_square():
+        turtle.pendown();
+        turtle.fillcolor("black");
+        turtle.begin_fill();
+        for x in range(2):
+            turtle.forward(20);
+            turtle.left(90);
+            turtle.forward(20);
+            turtle.left(90);
+        turtle.end_fill();
+
+    #pixels = str(input("ENETR THE WORD: "));
+    turtle.speed(10000);
+    y = 200;
+    x = -700;
+    biggest_x = x;
+    for pixel in pixels:
+        #ADD IF STATEMENTS
+        if pixel == "a": f1 = open("a.txt");
+        if pixel == "b": f1 = open("b.txt");
+        if pixel == "c": f1 = open("c.txt");
+        if pixel == "d": f1 = open("d.txt");
+        if pixel == "e": f1 = open("e.txt");
+        if pixel == "f": f1 = open("f.txt");
+
+        if pixel == "g": f1 = open("g.txt");
+        if pixel == "h": f1 = open("h.txt");
+        if pixel == "i": f1 = open("i.txt");
+        if pixel == "j": f1 = open("j.txt");
+        if pixel == "k": f1 = open("k.txt");
+        if pixel == "l": f1 = open("l.txt");
+        if pixel == "m": f1 = open("m.txt");
+        if pixel == "n": f1 = open("n.txt");
+        if pixel == "o": f1 = open("o.txt");
+
+        if pixel == "p": f1 = open("p.txt");
+        if pixel == "q": f1 = open("q.txt");
+        if pixel == "r": f1 = open("r.txt");
+        if pixel == "s": f1 = open("s.txt");
+        if pixel == "t": f1 = open("t.txt");
+        if pixel == "u": f1 = open("u.txt");
+        if pixel == "v": f1 = open("v.txt");
+        if pixel == "w": f1 = open("w.txt");
+        if pixel == "x": f1 = open("x.txt");
+        if pixel == "y": f1 = open("y.txt");
+        if pixel == "z": f1 = open("z.txt");
+
+        #UPPERCASE
+        if pixel == "A": f1 = open("A.txt");
+        if pixel == "B": f1 = open("B.txt");
+        if pixel == "C": f1 = open("C.txt");
+        if pixel == "D": f1 = open("D.txt");
+        if pixel == "E": f1 = open("E.txt");
+        if pixel == "F": f1 = open("F.txt");
+        if pixel == "G": f1 = open("G.txt");
+        if pixel == "H": f1 = open("H.txt");
+        if pixel == "I": f1 = open("I.txt");
+        if pixel == "J": f1 = open("J.txt");
+        if pixel == "K": f1 = open("K.txt");
+        if pixel == "L": f1 = open("L.txt");
+        if pixel == "M": f1 = open("M.txt");
+        if pixel == "N": f1 = open("N.txt");
+        if pixel == "O": f1 = open("O.txt");
+        if pixel == "P": f1 = open("P.txt");
+        if pixel == "Q": f1 = open("Q.txt");
+        if pixel == "R": f1 = open("R.txt");
+        if pixel == "S": f1 = open("S.txt");
+        if pixel == "T": f1 = open("T.txt");
+        if pixel == "U": f1 = open("U.txt");
+        if pixel == "V": f1 = open("V.txt");
+        if pixel == "W": f1 = open("W.txt");
+        if pixel == "X": f1 = open("X.txt");
+        if pixel == "Y": f1 = open("Y.txt");
+        if pixel == "Z": f1 = open("Z.txt");
+
+        lines = f1.readlines();
+        f1.close();
+        turtle.penup();
+        turtle.goto(x, y)
+        base_x = x;
+        base_y = y;
+
+        screen = turtle.Screen();
+        turtle.tracer(0);
+
+        for line in lines:
+            turtle.penup();
+            turtle.goto(x, y);
+            for element in line:
+                if element == " ":
+                    x+=30;
+                    turtle.goto(x, y);
+                    if x > biggest_x:
+                        biggest_x = x;
+                if element == "x":
+                    turtle.pendown();
+                    draw_square();
+                    turtle.penup();
+                    x+=30;
+                    turtle.goto(x, y);
+                    if x > biggest_x:
+                        biggest_x = x;
+            #########
+            turtle.update();
+            x = base_x;
+            y -= 40;
+        x = base_x + ((biggest_x - base_x)+20);
+        y = base_y;
+    input();
 
 
 #defining functons for opening a new window

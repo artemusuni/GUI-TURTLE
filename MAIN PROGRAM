@@ -59,8 +59,24 @@ def draw_word(word):
             turtle.goto(x+20, 0);
             G();
         if letter == "H": H();
-
-
+        if letter == "I": I();
+        if letter == "J": J();
+        if letter == "K": K();
+        if letter == "L": L();
+        if letter == "M": M();
+        if letter == "N": N();
+        if letter == "O": O();
+        if letter == "P": P();
+        if letter == "Q": Q();
+        if letter == "R": R();
+        if letter == "S": S();
+        if letter == "T": T();
+        if letter == "U": U();
+        if letter == "V": V();
+        if letter == "W": W();
+        if letter == "X": X();
+        if letter == "Y": Y();
+        if letter == "Z": Z();
 
         if letter == "C":  x+=70;
         else: x+=100;
@@ -171,9 +187,9 @@ def new_word_window():
     entry_word = Entry(window, borderwidth=8);
     entry_word.grid(row=1, column=0);
     #SUBMIT BUTTON
-    button = Button(window, text="NORMAL", bg="black", fg="white", borderwidth=5, command=lambda:draw_word(entry_word.get()));
+    button = Button(window, text="LETTER", bg="black", fg="white", borderwidth=5, command=lambda:draw_word(entry_word.get()));
     button.grid(row=2, column=0);
-    button_pixel = Button(window, text="PIXEL", bg="black", fg="white", borderwidth=5, command=lambda:pixel_word(entry_word.get()));
+    button_pixel = Button(window, text="WORD", bg="black", fg="white", borderwidth=5, command=lambda:pixel_word(entry_word.get()));
     button_pixel.grid(row=3, column=0);
 
 #Adding the label on te top
@@ -288,58 +304,210 @@ def H():
     turtle.left(90);
 
 def I():
-    pass;
+    turtle.pendown();
+    turtle.forward(30);
+    turtle.left(180);
+    turtle.forward(60);
+    turtle.right(180);
+    turtle.forward(30);
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.left(90);
+    turtle.forward(30);
+    turtle.right(180);
+    turtle.forward(60);
 
 def J():
-    pass;
+    turtle.pendown();
+    turtle.circle(50, 90);
+    turtle.forward(40);
+    turtle.left(90);
+    turtle.forward(40);
+    turtle.right(180);
+    turtle.forward(80);
 
 def K():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(60);
+    turtle.right(145);
+    turtle.forward(70);
+    turtle.left(180);
+    turtle.forward(70);
+    turtle.right(40);
+    turtle.right(45);
+    turtle.forward(60);
+    turtle.left(180);
+    turtle.forward(60);
+    turtle.right(125);
+    turtle.forward(40);
+    turtle.left(90);
 
 def L():
-    pass;
+    turtle.pendown();
+    turtle.forward(50);
+    turtle.left(180);
+    turtle.forward(50);
+    turtle.right(90);
+    turtle.forward(100);
+    turtle.right(90);
 
 def M():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(150);
+    turtle.forward(60);
+    turtle.left(120);
+    turtle.forward(60);
+    turtle.right(150);
+    turtle.forward(100);
+    turtle.left(90);
 
 def N():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(155);
+    turtle.forward(110);
+    turtle.left(155);
+    turtle.forward(100);
+    turtle.right(90);
+
 
 def O():
-    pass;
+    turtle.left(90);
+    turtle.forward(30);
+    turtle.right(180);
+    turtle.pendown();
+    turtle.circle(35, 180);
+    turtle.forward(35);
+    turtle.circle(35, 180);
+    turtle.forward(35);
+    turtle.left(90);
 
 def P():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.right(90);
+    turtle.circle(-28, 180);
+    turtle.left(180);
 
 def Q():
-    pass;
+    turtle.left(90);
+    turtle.forward(30);
+    turtle.left(180);
+    turtle.pendown();
+    turtle.circle(30, 180);
+    turtle.forward(20);
+    turtle.circle(30, 180);
+    turtle.forward(30);
+    turtle.left(90);
+    turtle.penup();
+    turtle.forward(60);
+    turtle.left(150);
+    turtle.pendown();
+    turtle.forward(30);
+    turtle.right(180);
+    turtle.forward(50);
+    turtle.left(30);
 
 def R():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(100);
+    turtle.left(90);
+    turtle.circle(27, -180);
+    turtle.right(50);
+    turtle.forward(60);
+    turtle.left(50);
 
 def S():
-    pass;
+    turtle.pendown();
+    turtle.forward(20);
+    turtle.circle(23, 180);
+    turtle.forward(10);
+    turtle.circle(-23, 180);
+    turtle.forward(20);
 
 def T():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(85);
+    turtle.left(90);
+    turtle.forward(30);
+    turtle.right(180);
+    turtle.forward(60);
 
 def U():
-    pass;
+    turtle.left(90);
+    turtle.forward(80);
+    turtle.right(180);
+    turtle.pendown();
+    turtle.forward(45)
+    turtle.circle(30, 180);
+    turtle.forward(45);
+    turtle.right(90);
 
 def V():
-    pass;
+    turtle.pendown();
+    turtle.left(110);
+    turtle.forward(90);
+    turtle.right(180);
+    turtle.forward(90);
+    turtle.left(140);
+    turtle.forward(90);
+    turtle.right(70);
 
 def W():
-    pass;
+    turtle.pendown();
+    turtle.left(120);
+    turtle.forward(75);
+    turtle.left(180);
+    turtle.forward(75);
+    turtle.left(120);
+    turtle.forward(50);
+    turtle.right(120);
+    turtle.forward(50);
+    turtle.left(125);
+    turtle.forward(75);
+    turtle.right(65);
 
 def X():
-    pass;
+    turtle.pendown();
+    turtle.left(50);
+    turtle.forward(100);
+    turtle.left(180);
+    turtle.forward(50);
+    turtle.right(100);
+    turtle.forward(50);
+    turtle.left(180);
+    turtle.forward(100);
+    turtle.left(50);
 
 def Y():
-    pass;
+    turtle.pendown();
+    turtle.left(90);
+    turtle.forward(55);
+    turtle.left(45);
+    turtle.forward(35);
+    turtle.left(180);
+    turtle.forward(35);
+    turtle.left(90);
+    turtle.forward(35);
+    turtle.right(45);
 
 def Z():
-    pass;
+    turtle.pendown();
+    turtle.forward(70);
+    turtle.left(180);
+    turtle.forward(70);
+    turtle.right(135);
+    turtle.forward(110);
+    turtle.left(135);
+    turtle.forward(70);
+    turtle.right(180);
 
 
 root.mainloop();

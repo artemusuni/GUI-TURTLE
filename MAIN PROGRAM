@@ -3,7 +3,7 @@ from tkinter import *;
 import turtle;
 #starting main loop
 root = Tk();
-root.title("This is all you have teached me");
+root.title("GUI TURTLE");
 
 #defining the functions for drawing(turtle) 
 def draw_circle(radius, color):
